@@ -5,8 +5,9 @@
   import { loginToDexcomCloud, fetchDataFromDexcom } from "./utils/api_service";
 
   const doYourThing = async () => {
-    const t = await loginToDexcomCloud("tommasorosso", "Apollo!");
-    alert(t);
+    const session_id = await loginToDexcomCloud("tommasorosso", "Apollo!");
+    const readings = await fetchDataFromDexcom(session_id);
+    alert(JSON.stringify(readings));
   };
 </script>
 
@@ -14,7 +15,7 @@
   <!-- <img src={logo} alt="Svelte Logo" /> -->
   <!-- <h1>Hello Typescript!</h1> -->
 
-  <Counter />
+  <!-- <Counter /> -->
 
   <button on:click={doYourThing}>Ciao</button>
 </main>
