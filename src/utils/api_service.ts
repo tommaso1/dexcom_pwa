@@ -47,8 +47,9 @@ export async function loginToDexcomCloud(accountName: string, password: string, 
     return doPost(url, body, sharedHeaders);
 }
 
-export async function fetchDataFromDexcom(sessionID: string): Promise<DexcomDataRecord[] | string> {
-    const url = `https://${server}/ShareWebServices/Services/Publisher/ReadPublisherLatestGlucoseValues?sessionID=${sessionID}&minutes=1440&maxCount=${6}`;
+export async function fetchDataFromDexcom(sessionID: string, howMany= 6): Promise<DexcomDataRecord[] | string> {
+    
+    const url = `https://${server}/ShareWebServices/Services/Publisher/ReadPublisherLatestGlucoseValues?sessionID=${sessionID}&minutes=1440&maxCount=${howMany}`;
     const body = {
 
     }
