@@ -14,9 +14,15 @@
     "@tsconfig/svelte": "^2.0.1",
     "svelte": "^3.44.0",
     "svelte-check": "^2.2.7",
-    "svelte-preprocess": "^4.9.8",
+    "svelte-preprocess": "^4.10.6",
     "tslib": "^2.3.1",
     "typescript": "^4.5.4",
     "vite": "^2.9.9"
+  },
+  "dependencies": {
+    "@lottiefiles/lottie-interactivity": "^1.5.2",
+    "@lottiefiles/lottie-player": "^1.5.7",
+    "node-sass": "^7.0.1",
+    "svelte-navigator": "^3.1.5"
   }
 }
