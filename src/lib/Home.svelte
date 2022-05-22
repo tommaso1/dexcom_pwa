@@ -28,6 +28,7 @@
                 window.location.href = "/login";
             }
         });
+        
         await fetchDataFromDexcom(sessionId, 150).then((d) => {
             console.log(d);
             if (typeof d !== "string") dailyData = d;
