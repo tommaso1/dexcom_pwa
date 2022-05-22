@@ -25,8 +25,8 @@
 <style>
     * {
         font-family: "Square Peg", cursive;
+        outline: none;
     }
-
     div {
         height: 100vh;
         display: flex;

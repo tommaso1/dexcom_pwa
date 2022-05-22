@@ -106,6 +106,7 @@
 <style>
     * {
         color: rgb(0, 10, 14);
+        outline: none;
     }
     .current {
         border: 1px solid gainsboro;
