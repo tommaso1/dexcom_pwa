@@ -19,18 +19,16 @@
     $: formattedData = lastData.map((ld) => [getTime(ld), ld.Value]);
 
     const fetchAll = async () => {
-        loading = true
+        loading = true;
         await fetchDataFromDexcom(sessionId, 6).then((d) => {
-            console.log(d);
             if (d[0]) lastData = d;
             else {
                 window.localStorage.clear();
                 window.location.href = "/login";
             }
         });
-        
+
         await fetchDataFromDexcom(sessionId, 150).then((d) => {
-            console.log(d);
             if (typeof d !== "string") dailyData = d;
             else {
                 window.localStorage.clear();
@@ -67,9 +65,7 @@
     </div>
 
     <ul>
-        {#each formattedData.map(([t, v], i) => [t
-                .toLocaleString()
-                .substring(12), v, i]) as item}
+        {#each formattedData.map( ([t, v], i) => [t.toLocaleTimeString(), v, i] ) as item}
             <li
                 style="opacity: {1 - 0.15 * item[2]};"
                 class={item[2] == 0 ? "current" : ""}
